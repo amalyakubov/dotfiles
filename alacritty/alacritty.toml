@@ -1,0 +1,138 @@
+# ~/AppData/Roaming/alacritty/alacritty.toml
+# Alacritty 0.17 — One Dark Pro theme
+# Reference: https://alacritty.org/config-alacritty.html
+
+[general]
+live_config_reload = true   # apply edits to this file without restarting
+
+[terminal.shell]
+program = "C:\\Program Files\\PowerShell\\7\\pwsh.exe"
+args = ["-NoLogo"]
+
+[env]
+TERM = "xterm-256color"
+
+# ── Window ────────────────────────────────────────────────
+[window]
+dimensions = { columns = 120, lines = 32 }
+padding = { x = 12, y = 10 }
+dynamic_padding = true      # spread leftover pixels evenly around the grid
+decorations = "Full"
+decorations_theme_variant = "Dark"   # dark native titlebar to match the theme
+opacity = 0.96
+startup_mode = "Windowed"
+title = "Alacritty"
+dynamic_title = true
+
+# ── Scrolling ─────────────────────────────────────────────
+[scrolling]
+history = 20000
+multiplier = 3
+
+# ── Font ──────────────────────────────────────────────────
+[font]
+size = 12.0
+normal      = { family = "FiraCode Nerd Font", style = "Regular" }
+bold        = { family = "FiraCode Nerd Font", style = "Bold" }
+italic      = { family = "FiraCode Nerd Font", style = "Regular" }
+bold_italic = { family = "FiraCode Nerd Font", style = "Bold" }
+offset = { x = 0, y = 2 }   # a little extra line spacing
+glyph_offset = { x = 0, y = 1 }
+
+# ── Cursor ────────────────────────────────────────────────
+[cursor]
+style = { shape = "Beam", blinking = "On" }
+vi_mode_style = { shape = "Block", blinking = "Off" }
+blink_interval = 600
+blink_timeout = 10
+unfocused_hollow = true
+thickness = 0.15
+
+# ── Selection / mouse / bell ──────────────────────────────
+[selection]
+save_to_clipboard = true    # copy on select
+
+[mouse]
+hide_when_typing = true
+
+[bell]
+animation = "EaseOutExpo"
+duration = 100
+color = "#3e4451"
+
+# ── Colors: One Dark Pro ──────────────────────────────────
+[colors]
+draw_bold_text_with_bright_colors = false
+
+[colors.primary]
+foreground = "#abb2bf"
+background = "#282c34"
+dim_foreground = "#7f848e"
+bright_foreground = "#e6e6e6"
+
+[colors.cursor]
+text = "#282c34"
+cursor = "#528bff"
+
+[colors.vi_mode_cursor]
+text = "#282c34"
+cursor = "#c162de"
+
+[colors.search.matches]
+foreground = "#282c34"
+background = "#d18f52"
+
+[colors.search.focused_match]
+foreground = "#282c34"
+background = "#8cc265"
+
+[colors.footer_bar]
+foreground = "#abb2bf"
+background = "#21252b"
+
+[colors.hints.start]
+foreground = "#282c34"
+background = "#d18f52"
+
+[colors.hints.end]
+foreground = "#282c34"
+background = "#abb2bf"
+
+[colors.selection]
+text = "CellForeground"
+background = "#3e4451"
+
+[colors.normal]
+black   = "#3f4451"
+red     = "#e05561"
+green   = "#8cc265"
+yellow  = "#d18f52"
+blue    = "#4aa5f0"
+magenta = "#c162de"
+cyan    = "#42b3c2"
+white   = "#d7dae0"
+
+[colors.bright]
+black   = "#4f5666"
+red     = "#ff616e"
+green   = "#a5e075"
+yellow  = "#f0a45d"
+blue    = "#4dc4ff"
+magenta = "#de73ff"
+cyan    = "#4cd1e0"
+white   = "#e6e6e6"
+
+# ── Key bindings ──────────────────────────────────────────
+# Defaults already cover: Ctrl+Shift+C/V copy/paste, Ctrl+=/-/0 font size,
+# Ctrl+Shift+F search, Ctrl+Shift+Space vi mode.
+[keyboard]
+bindings = [
+  { key = "Return", mods = "Control|Shift", action = "SpawnNewInstance" },
+  { key = "F11",                            action = "ToggleFullscreen" },
+  { key = "Return", mods = "Alt",           action = "ToggleFullscreen" },
+  { key = "K",      mods = "Control|Shift", action = "ClearHistory" },
+  { key = "PageUp",   mods = "Shift",       action = "ScrollPageUp" },
+  { key = "PageDown", mods = "Shift",       action = "ScrollPageDown" },
+  { key = "Home",     mods = "Shift",       action = "ScrollToTop" },
+  { key = "End",      mods = "Shift",       action = "ScrollToBottom" },
+]
